@@ -36,3 +36,6 @@
 Видео инструкция по запуску проекта [ссылке](https://www.youtube.com/watch?v=a7HxWF0eFtQ).
 
 Видео презентация проекта [ссылке](https://youtu.be/ZSiJWqyd5Vk).
+
+Зависомости:react,axios,antd,express,node-fetch
+Пришлось дописать не большой бекенд на nodejs так как некоторый api запросы с клиента не принимают
