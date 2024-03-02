@@ -42,24 +42,23 @@ const loginForGitHub = async () => {
 };
 
 const getUserRepos = async (name) => {
-  const response = await fetch(`https://api.github.com/users/${name}/repos`, {
+  const response = await fetch(`https://api.github.com/search/repositories?q=user:`+name, {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("access_token"),
     },
   });
   const data = await response.json();
-  console.log(data);
+  return data;
+};
+const getDefaultUserRepos = async (name) => {
+  const response = await fetch(`https://api.github.com/search/repositories?q=user:`+name);
+  const data = await response.json();
   return data;
 };
 
-const getContrabationsRepo = async (name,repoName) => {
- const response  =await fetch(`https://api.github.com/repos/${name}/geeksman3d/contributors`,{
-    headers:{
-      Authorization: "Bearer " + localStorage.getItem("access_token"),
-    }
-  })
+const searchUsers = async (searchValue) => {
+ const response  =await fetch(`https://api.github.com/search/users?q=`+searchValue)
   const data =await response.json()
-  console.log(data);
   return data
 };
 
@@ -69,7 +68,8 @@ const api = {
   getUserProfile,
   changeUserProfile,
   getUserRepos,
-  getContrabationsRepo
+  searchUsers,
+  getDefaultUserRepos
 };
 
 export default api;

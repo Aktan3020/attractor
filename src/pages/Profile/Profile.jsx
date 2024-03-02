@@ -24,7 +24,6 @@ const Profile = ({ messageApi }) => {
       }
       setData(data);
       setLoading(false);
-      console.log(data);
       setEditData({
         name: data.name,
         email: data.email,
@@ -38,15 +37,10 @@ const Profile = ({ messageApi }) => {
     })();
   }, []);
 
-  console.log(editData);
-
   const saveEditData = (target, value) => {
-    console.log(value);
     const newObj = { ...editData };
     newObj[target] = value;
-    console.log("obj", newObj);
     setEditData(newObj);
-    console.log(editData, "///");
   };
 
   if (loading) {

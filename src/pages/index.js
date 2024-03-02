@@ -1,5 +1,6 @@
 import Main from "./Main/Main";
 import Profile from "./Profile/Profile";
 import Repo from "./Repo/Repo";
-import OtherUserRepo from "./OtherUserRepo/OtherUserRepo";
-export {Main,Profile,Repo,OtherUserRepo}
+import OtherUsers from "./OtherUser/OtherUsers";
+import UserDetails from "./UserDetails/UserDetails";
+export {Main,Profile,Repo,OtherUsers,UserDetails}
