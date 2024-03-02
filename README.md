@@ -33,5 +33,6 @@
 
 
 
-Видео инструкция по запуску а также по самому проект по [ссылке](https://github.com/facebook/create-react-app).
+Видео инструкция по запуску проекта [ссылке](https://www.youtube.com/watch?v=a7HxWF0eFtQ).
 
+Видео презентация проекта [ссылке]([https://www.youtube.com/watch?v=a7HxWF0eFtQ](https://youtu.be/ZSiJWqyd5Vk)https://youtu.be/ZSiJWqyd5Vk).
