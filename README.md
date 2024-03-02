@@ -3,9 +3,32 @@
 1)Открыть терминал происав команду win + r далее нажать на ок
 
 
-2)вставить туда это команду 
+2)вставить туда это команду git clone https://github.com/Aktan3020/attractor.git
+
+
+3)На вашем рабочем столе появиться папка attractor-master,далее открыть эту папку при помощи программы visual studio code
+
+
+4)открыть терминал при помощи команды ctrl + shift + `
+
+
+5)вставить к терминал команду npm install
+
+
+6)После установки зависимостей происать команду npm run server 
+
+
+7)открыть терминал при помощи команды ctrl + shift + `
+
+
+8)вставить к терминал команду npm start
+
+
+Поздровляю ! Проект запущен по ссылке http://localhost:3000
 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+Видео инструкция по запуску а также по самому проект по [ссылке](https://github.com/facebook/create-react-app).
 
