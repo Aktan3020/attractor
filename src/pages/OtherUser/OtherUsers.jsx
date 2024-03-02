@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Breadcrumb, Typography, Input, Card, Image,Spin } from "antd";
+import { Layout, Breadcrumb, Typography, Input, Card, Image, Spin } from "antd";
 import api from "../../api/api";
 import { Link } from "react-router-dom";
 const { Content } = Layout;
@@ -14,10 +14,19 @@ const OtherUsers = ({ messageApi }) => {
   React.useEffect(() => {
     (async () => {
       if (searchValue.trim() !== "") {
-        setLoading(true);
-        const data = await api.searchUsers(searchValue);
-        setData(data.items);
-        setLoading(false);
+        try {
+          setLoading(true);
+          const data = await api.searchUsers(searchValue);
+
+          if (!data.items) {
+            setData([{ err: true }]);
+          } else {
+            setData(data.items);
+          }
+          setLoading(false)
+        } catch (err) {
+          setLoading(false);
+        }
       } else {
         messageApi.open({
           type: "error",
@@ -54,7 +63,6 @@ const OtherUsers = ({ messageApi }) => {
           <Search
             placeholder="input search loading with enterButton"
             enterButton
-            loading={loading}
             onChange={searchUsers}
           />
           <br />
@@ -63,22 +71,25 @@ const OtherUsers = ({ messageApi }) => {
             className="users"
             style={{ display: "flex", flexWrap: "wrap", gap: 10 }}
           >
-            {!loading
-              ? data.map((item,index) => {
-                  return (
-                    <Card
+            {!loading ? (
+              data.map((item, index) => {
+                if (item.err) {
+                  return <Title>Превышен лимит запросов!Подождите не много</Title>;
+                }
+                return (
+                  <Card
                     key={index}
-                      title={"login:" + item.login}
-                      extra={
-                        <Link to={"/other_users/" + item.login}>More</Link>
-                      }
-                      style={{ width: 300 }}
-                    >
-                      <Image width={80} src={item.avatar_url} />
-                    </Card>
-                  );
-                })
-              :  <Spin style={{ margin: "50px auto", display: "block" }} />}
+                    title={"login:" + item.login}
+                    extra={<Link to={"/other_users/" + item.login}>More</Link>}
+                    style={{ width: 300 }}
+                  >
+                    <Image width={80} src={item.avatar_url} />
+                  </Card>
+                );
+              })
+            ) : (
+              <Spin style={{ margin: "50px auto", display: "block" }} />
+            )}
           </div>
         </div>
       </Content>
