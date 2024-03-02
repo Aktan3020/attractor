@@ -35,4 +35,4 @@
 
 Видео инструкция по запуску проекта [ссылке](https://www.youtube.com/watch?v=a7HxWF0eFtQ).
 
-Видео презентация проекта [ссылке]([https://www.youtube.com/watch?v=a7HxWF0eFtQ](https://youtu.be/ZSiJWqyd5Vk)https://youtu.be/ZSiJWqyd5Vk).
+Видео презентация проекта [ссылке](https://youtu.be/ZSiJWqyd5Vk).
